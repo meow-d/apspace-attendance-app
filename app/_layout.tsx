@@ -7,9 +7,7 @@ export default function Layout() {
   if (isAuthenticated === null) return null
 
   return <Stack screenOptions={{ headerShown: false }}>
-    <Stack.Protected guard={!isAuthenticated}>
-      <Stack.Screen name="login" />
-    </Stack.Protected>
+    <Stack.Screen name="login" />
     <Stack.Protected guard={isAuthenticated}>
       <Stack.Screen name="index" />
     </Stack.Protected>

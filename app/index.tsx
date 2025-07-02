@@ -1,11 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { View, Text, TouchableOpacity, Alert, StyleSheet } from 'react-native'
 import { attendance } from '@/lib/attendance'
 import { useRouter } from 'expo-router'
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 import { logout } from '@/lib/auth';
+import { useAuthStatus } from '@/lib/authStatus';
 
 export default function CodeScreen() {
+  const isAuthenticated = useAuthStatus()
+  useEffect(() => {
+    if (isAuthenticated === false) {
+      router.replace('/login')
+    }
+  }, [isAuthenticated])
+
   const CELL_COUNT = 3;
 
   const [code, setCode] = useState('')
