@@ -24,13 +24,13 @@ export default function CodeScreen() {
     }
 
     if (text.length === CELL_COUNT) {
-      handleSubmit()
+      handleSubmit(text)
     }
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (code: string) => {
     if (code.length !== 3) {
-      Alert.alert('Error', 'Please enter a 3-digit code.')
+      Alert.alert('Error', `${code.length} ${code}`)
       return
     }
 
