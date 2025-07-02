@@ -18,7 +18,7 @@ export default function CodeScreen() {
 
   const router = useRouter()
 
-  const idk = (text: string) => {
+  const handleInput = (text: string) => {
     if (/^\d*$/.test(text) && text.length <= CELL_COUNT) {
       setCode(text)
     }
@@ -50,7 +50,7 @@ export default function CodeScreen() {
         ref={ref}
         {...props}
         value={code}
-        onChangeText={idk}
+        onChangeText={handleInput}
         cellCount={CELL_COUNT}
         rootStyle={styles.codeFieldRoot}
         keyboardType="number-pad"
