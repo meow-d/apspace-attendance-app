@@ -5,13 +5,13 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  Alert,
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { login } from '@/lib/auth';
 import { router } from 'expo-router';
+import alert from '@/lib/alert'
 
 export default function LoginScreen() {
   const [id, setId] = useState('');
@@ -20,17 +20,17 @@ export default function LoginScreen() {
   const handleLogin = async () => {
     // validation
     if (!id || !password) {
-      Alert.alert('Error', 'Please enter both id and password.')
+      alert('Error', 'Please enter both id and password.')
       return
     }
 
     if (id.length !== 8) {
-      Alert.alert('Error', 'TP number must be 8 digits long.')
+      alert('Error', 'TP number must be 8 digits long.')
       return
     }
 
     if (!/^(TP)\d+$/.test(id)) {
-      Alert.alert('Error', 'TP number must start with TP and contain only digits.')
+      alert('Error', 'TP number must start with TP and contain only digits.')
       return
     }
 
@@ -38,7 +38,7 @@ export default function LoginScreen() {
     const success = await login(id, password)
 
     if (!success) {
-      Alert.alert('Login failed', 'Incorrect TP number or password.')
+      alert('Login failed', 'Incorrect TP number or password.')
       return
     }
 

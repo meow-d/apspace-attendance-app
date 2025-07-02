@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity, Alert, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { attendance } from '@/lib/attendance'
 import { useRouter } from 'expo-router'
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 import { logout } from '@/lib/auth';
 import { useAuthStatus } from '@/lib/authStatus';
+import alert from '@/lib/alert'
 
 export default function CodeScreen() {
   const isAuthenticated = useAuthStatus()
@@ -38,18 +39,18 @@ export default function CodeScreen() {
 
   const handleSubmit = async (code: string) => {
     if (code.length !== 3) {
-      Alert.alert('Error', `${code.length} ${code}`)
+      alert('Error', `${code.length} ${code}`)
       return
     }
 
     const error = await attendance(code)
 
     if (error) {
-      Alert.alert('Failed', error)
+      alert('Failed', error)
       return
     }
 
-    Alert.alert('Success', 'Attendance submitted!')
+    alert('Success', 'Attendance submitted!')
   }
 
   return (

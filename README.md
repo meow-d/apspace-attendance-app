@@ -4,5 +4,5 @@
 - [x] fix routing after login
 - [x] actually try using it for once
 - [x] better logout button
+- [x] Alert on web
 - [ ] app icon and other metadata
-- [ ] Alert on web
