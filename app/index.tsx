@@ -53,6 +53,7 @@ export default function CodeScreen() {
         onChangeText={handleInput}
         cellCount={CELL_COUNT}
         rootStyle={styles.codeFieldRoot}
+        autoFocus={true}
         keyboardType="number-pad"
         textContentType="oneTimeCode"
         renderCell={({ index, symbol, isFocused }) => (
