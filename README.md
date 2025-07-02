@@ -5,4 +5,8 @@
 - [x] actually try using it for once
 - [x] better logout button
 - [x] Alert on web
-- [ ] app icon and other metadata
+- [x] app icon and other metadata
+  - [ ] web favicon probably doesn't look good on a browser with dark theme
+
+## credits
+app icon from iconoir.com
