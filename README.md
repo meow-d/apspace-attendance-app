@@ -4,3 +4,5 @@
 - [ ] fix routing after login
 - [ ] urm attendance
 - [ ] actually try using it for once
+- [ ] better logout button
+- [ ] Alert on web
