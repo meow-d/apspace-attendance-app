@@ -76,11 +76,11 @@ export default function CodeScreen() {
         )}
       />
 
-      <TouchableOpacity onPress={() => {
+      <TouchableOpacity style={styles.logout} onPress={() => {
         logout()
         router.replace('/login')
       }}>
-        <Text style={{ color: '#007AFF', fontSize: 16 }}>logout</Text>
+        <Text style={styles.logoutText}>logout</Text>
       </TouchableOpacity>
     </View>
   )
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottomColor: '#ccc',
+    borderBottomColor: '#aaa',
     borderBottomWidth: 1,
   },
   cellText: {
@@ -115,5 +115,15 @@ const styles = StyleSheet.create({
   focusCell: {
     borderBottomColor: '#007AFF',
     borderBottomWidth: 2,
+  },
+  logout: {
+    position: 'absolute',
+    bottom: 20,
+    left: 20,
+  },
+  logoutText: {
+    color: '#007AFF',
+    fontSize: 16,
+    textAlign: 'center',
   },
 })
