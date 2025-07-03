@@ -1,6 +1,9 @@
+import { isWeb } from "@/lib/isWeb";
 import { Linking, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default function GetApp() {
+  if (!isWeb) return
+
   return (
     <TouchableOpacity
       onPress={() => Linking.openURL('https://github.com/meow-d/apspace-attendance-app/releases/latest')}
