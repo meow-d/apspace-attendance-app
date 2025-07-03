@@ -7,6 +7,8 @@
 - [x] Alert on web
 - [x] app icon and other metadata
   - [ ] web favicon probably doesn't look good on a browser with dark theme
+  - [x] smaller and nicer adaptive icon
+
 
 ## credits
 app icon from iconoir.com

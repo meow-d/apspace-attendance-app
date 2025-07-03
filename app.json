@@ -1,20 +1,22 @@
 {
   "expo": {
-    "name": "apspace-attendance-app",
+    "name": "attendance",
     "slug": "apspace-attendance-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "apspaceattendanceapp",
+    "githubUrl": "https://github.com/meow-d/apspace-attendance-app",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "io.github.meow-d.attendance"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "monochromeImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#f7f8fa"
       },
       "edgeToEdgeEnabled": true,
       "package": "io.github.meow_d.attendance"
@@ -26,15 +28,6 @@
     },
     "plugins": [
       "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/adaptive-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ],
       "expo-secure-store"
     ],
     "experiments": {
