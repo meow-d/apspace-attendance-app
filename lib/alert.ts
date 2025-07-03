@@ -1,7 +1,5 @@
 import { Alert } from 'react-native';
-import { Platform } from 'react-native';
-
-const isWeb = Platform.OS === 'web'
+import { isWeb } from './isWeb';
 
 /**
  * Displays an alert using React Native's alert, but with a window.alert fallback for the web.

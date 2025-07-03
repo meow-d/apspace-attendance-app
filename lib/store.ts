@@ -1,8 +1,7 @@
-import { Platform } from 'react-native'
-import * as SecureStore from 'expo-secure-store'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import * as SecureStore from 'expo-secure-store'
+import { isWeb } from './isWeb'
 
-const isWeb = Platform.OS === 'web'
 
 export async function getItem(key: string): Promise<string | null> {
   if (isWeb) return await AsyncStorage.getItem(key)

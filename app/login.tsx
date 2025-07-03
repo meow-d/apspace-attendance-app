@@ -1,4 +1,5 @@
 import Button from '@/components/button';
+import GetApp from '@/components/getApp';
 import alert from '@/lib/alert';
 import { login } from '@/lib/auth';
 import { router } from 'expo-router';
@@ -48,6 +49,8 @@ export default function LoginScreen() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
+      <GetApp />
+
       <View style={styles.inner}>
         <TextInput
           style={styles.input}

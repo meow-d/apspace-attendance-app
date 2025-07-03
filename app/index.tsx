@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import { attendance } from '@/lib/attendance'
-import { useRouter } from 'expo-router'
-import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
+import alert from '@/lib/alert';
+import { attendance } from '@/lib/attendance';
 import { logout } from '@/lib/auth';
 import { useAuthStatus } from '@/lib/authStatus';
-import alert from '@/lib/alert'
+import { useRouter } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
+import GetApp from '@/components/getApp';
 
 export default function CodeScreen() {
   const isAuthenticated = useAuthStatus()
@@ -55,6 +56,8 @@ export default function CodeScreen() {
 
   return (
     <View style={styles.container}>
+      <GetApp />
+
       <CodeField
         ref={ref}
         {...props}
@@ -120,11 +123,11 @@ const styles = StyleSheet.create({
   logout: {
     position: 'absolute',
     bottom: 20,
-    left: 20,
+    right: 20,
   },
   logoutText: {
     color: '#007AFF',
     fontSize: 16,
-    textAlign: 'center',
+    textAlign: 'right',
   },
 })
