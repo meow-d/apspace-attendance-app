@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  KeyboardAvoidingView,
-  Platform,
-} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import Button from '@/components/button';
+import alert from '@/lib/alert';
 import { login } from '@/lib/auth';
 import { router } from 'expo-router';
-import alert from '@/lib/alert'
+import { useState } from 'react';
+import {
+  KeyboardAvoidingView,
+  Platform,
+  StyleSheet,
+  TextInput,
+  View
+} from 'react-native';
 
 export default function LoginScreen() {
   const [id, setId] = useState('');
@@ -69,14 +67,7 @@ export default function LoginScreen() {
           secureTextEntry
         />
 
-        <TouchableOpacity style={styles.loginButton} activeOpacity={0.7} onPress={handleLogin}>
-          <LinearGradient
-            colors={['#423cc5', '#4f52f5']}
-            style={styles.gradient}
-          >
-            <Text style={styles.loginButtonText}>login</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+        <Button onPress={handleLogin} title="Login" />
 
       </View>
     </KeyboardAvoidingView >
@@ -112,35 +103,10 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 15,
     marginBottom: 15,
-    marginLeft: 1,
-    marginRight: 1,
+    marginLeft: 5,
+    marginRight: 5,
     fontSize: 16,
     color: '#1e293b',
-  },
-  loginButton: {
-    width: '100%',
-    height: 50,
-    backgroundColor: '#4f46e5',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-    marginTop: 15,
-    shadowColor: '#4f46e5',
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
-    elevation: 10,
-  },
-  gradient: {
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 8,
-  },
-  loginButtonText: {
-    color: '#fff',
-    fontSize: 18,
   },
   linksContainer: {
     marginTop: 25,

@@ -5,10 +5,15 @@
 - [x] actually try using it for once
 - [x] better logout button
 - [x] Alert on web
+- [ ] nicer button
 - [x] app icon and other metadata
   - [ ] web favicon probably doesn't look good on a browser with dark theme
   - [x] smaller and nicer adaptive icon
 
+## colors
+- #f7f8fa
+- #3D52D5
+- #001dd3
 
 ## credits
 app icon from iconoir.com
